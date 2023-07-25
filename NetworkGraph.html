@@ -1,0 +1,21 @@
+<html>
+<head>Network Graph in Aframe
+  <style> body { margin: 0; } </style>
+
+  <script src="https://unpkg.com/3d-force-graph-vr"></script>
+</head>
+
+<body>
+
+  <div id="3d-graph"></div>
+
+  <script>
+    const elem = document.getElementById('3d-graph');
+
+    const Graph = ForceGraphVR()(elem)
+      .jsonUrl('https://raw.githubusercontent.com/vasturiano/3d-force-graph-vr/master/example/datasets/blocks.json')
+      .nodeAutoColorBy('user')
+      .nodeLabel(node => `${node.user}: ${node.description}`);
+  </script>
+</body>
+</html>
